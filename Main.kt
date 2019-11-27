@@ -29,7 +29,7 @@ fun main()
     )
     println("A und B-Ersetzte Liste: $replacedProductList")
 
-    val isThereSomethingMoreExpensiveThan100 = productFunctions.any(productList) { p : Product -> p.productPrice > 100 }
+    val isThereSomethingMoreExpensiveThan100 = productFunctions.any(productList) { it.productPrice > 100 }
     println(isThereSomethingMoreExpensiveThan100)
 
     val sumOfAllProductPrices1 = productFunctions.recursiveFold(

@@ -16,15 +16,15 @@ fun main()
     val mappedPriceFilteredProductList = productFunctions.map(priceFilteredProductList) { it.productName }
     println("Gemappte nach Preis gefilterte Liste: $mappedPriceFilteredProductList")
 
-    val taxedProductList = productFunctions.map(productList) { it.productPrice * 1.19}
+    val taxedProductList = productFunctions.map(productList) { it.productPrice * 1.19 }
     println("Gemappt auf Bruttopreise: $taxedProductList")
 
-    val ratingFilteredProductList = productFunctions.filter(productList) { it.productRating > 3}
+    val ratingFilteredProductList = productFunctions.filter(productList) { it.productRating > 3 }
     println("Gefiltert nach Rating: $ratingFilteredProductList")
 
     val replacedProductList = productFunctions.replaceIf(
         productList,
-        { Product("Angebot: " + it.productName, it.productPrice, it.productRating)},
+        { Product("Angebot: " + it.productName, it.productPrice, it.productRating) },
         { it.productName.startsWith('A') || it.productName.startsWith('B') }
     )
     println("A und B-Ersetzte Liste: $replacedProductList")

@@ -41,7 +41,7 @@ class ListFunctions
         var acc = accumulated
         while(tmp is List.Node)
         {
-            acc = f(accumulated, tmp.head)
+            acc = f(acc, tmp.head)
             tmp = tmp.tail
 
         }
